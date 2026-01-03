@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anh yêu em</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); /* Nền xanh dương dịu nhẹ */
+            font-family: 'Quicksand', sans-serif;
+            overflow: hidden;
+            color: #2c3e50;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            z-index: 10;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #ff6b6b;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .link-card {
+            text-decoration: none;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 15px;
+            color: #4a90e2;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 2px solid transparent;
+        }
+
+        .link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(74, 144, 226, 0.3);
+            border-color: #4a90e2;
+            background: #f0f8ff;
+        }
+
+        /* Hiệu ứng Icon rơi */
+        .heart {
+            position: absolute;
+            top: -50px;
+            font-size: 20px;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Anh yêu em ❤️</h1>
+        <div class="links-container">
+            <a href="https://azota.vn/de-thi/hrafki" class="link-card">📚 Tiếng Anh</a>
+            <a href="https://azota.vn/de-thi/mdxv2o" class="link-card">🧬 Sinh học</a>
+            <a href="https://azota.vn/de-thi/wgtrqr" class="link-card">💻 Tin học</a>
+            <a href="https://azota.vn/de-thi/vjcswo" class="link-card">📜 Sử trắc nghiệm</a>
+            <a href="https://azota.vn/de-thi/3joe8z" class="link-card">⚖️ Sử đúng sai</a>
+        </div>
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            
+            // Các icon sẽ rơi (có thể thay đổi tùy thích)
+            const icons = ['💙', '☁️', '✨', '🌸', '⭐', '🎈'];
+            heart.innerText = icons[Math.floor(Math.random() * icons.length)];
+            
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s"; // Thời gian rơi từ 2-5s
+            heart.style.opacity = Math.random();
+            heart.style.fontSize = Math.random() * 20 + 10 + "px";
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        // Tạo icon liên tục
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
