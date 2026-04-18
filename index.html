@@ -1,123 +1,145 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anh yêu em</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Pacifico&display=swap" rel="stylesheet">
+    <title>yêu bé trang của anh</title>
     <style>
+        /* GIỮ NGUYÊN FORM CŨ CỦA BẠN */
         body {
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); /* Nền xanh dương dịu nhẹ */
-            font-family: 'Quicksand', sans-serif;
-            overflow: hidden;
-            color: #2c3e50;
+            background: #a1c4fd;
+            overflow-x: hidden;
+            font-family: sans-serif;
         }
 
-        .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 40px;
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
+        .banner {
+            width: 100%;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            text-align: center !important;
+            color: white !important;
+            position: relative;
             z-index: 10;
-            max-width: 400px;
-            width: 90%;
         }
 
-        h1 {
-            font-family: 'Pacifico', cursive;
-            color: #ff6b6b;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        .slogan {
+            background-color: rgb(248, 249, 250) !important;
+            text-align: center !important;
+            width: 100%;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            position: relative;
+            z-index: 10;
         }
 
-        .links-container {
+        .row {
             display: flex;
-            flex-direction: column;
-            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            max-width: 100%;
+            padding-right: 3rem;
+            padding-left: 3rem;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
         }
 
-        .link-card {
+        div a {
             text-decoration: none;
-            background: white;
-            padding: 12px 20px;
-            border-radius: 15px;
             color: #4a90e2;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 2px solid transparent;
+            font-weight: bold;
+            background: white;
+            padding: 15px 25px;
+            margin: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            transition: 0.3s;
+            border: 1px solid #ddd;
         }
 
-        .link-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(74, 144, 226, 0.3);
-            border-color: #4a90e2;
-            background: #f0f8ff;
+        div a:hover {
+            color: red;
+            transform: scale(1.1);
         }
 
-        /* Hiệu ứng Icon rơi */
-        .heart {
-            position: absolute;
-            top: -50px;
-            font-size: 20px;
+        /* HIỆU ỨNG RƠI BLINK BLINK */
+        .falling-item {
+            position: fixed; /* Dùng fixed để đảm bảo nó luôn hiển thị trên màn hình */
+            top: -60px;
             user-select: none;
             pointer-events: none;
-            animation: fall linear infinite;
+            z-index: 9999; /* Đẩy lên cao nhất để không bị banner che */
         }
 
         @keyframes fall {
-            to {
-                transform: translateY(110vh) rotate(360deg);
-            }
+            0% { transform: translateY(-10px) rotate(0deg); }
+            100% { transform: translateY(110vh) rotate(360deg); }
+        }
+
+        .blink {
+            animation: fall linear forwards, blink-anim 0.8s infinite alternate;
+        }
+
+        @keyframes blink-anim {
+            from { opacity: 0.3; filter: drop-shadow(0 0 5px white); }
+            to { opacity: 1; filter: drop-shadow(0 0 15px white); }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Anh yêu em ❤️</h1>
-        <div class="links-container">
-            <a href="https://azota.vn/de-thi/hrafki" class="link-card">📚 Tiếng Anh</a>
-            <a href="https://azota.vn/de-thi/mdxv2o" class="link-card">🧬 Sinh học</a>
-            <a href="https://azota.vn/de-thi/wgtrqr" class="link-card">💻 Tin học</a>
-            <a href="https://azota.vn/de-thi/vjcswo" class="link-card">📜 Sử trắc nghiệm</a>
-            <a href="https://azota.vn/de-thi/3joe8z" class="link-card">🌺 Sử đúng sai</a>
-            <a href="https://azota.vn/de-thi/xnucgn" class="link-card"> (๑`^´๑) Hóa</a>
-        </div>
+    <div class="banner">
+        <h1>yêu bé trang của anh 💙</h1>
+        <p style="font-size: 1.2rem; font-weight: bold; color: #ffeb3b;">anh xin lỗi bé yêu của anh mình quay lại nha 🥺</p>
+    </div>
+
+    <div class="slogan">
+        <h2>Học tốt nha bé iu ✨</h2>
+    </div>
+
+    <div class="row">
+        <!-- GIỮ NGUYÊN CHỮ VUI VUI CỦA BẠN -->
+        <a href="https://azota.vn/de-thi/qqxokw" target="_blank">tíng amh</a>
+        <a href="https://azota.vn/de-thi/fzlk7f" target="_blank">tin họt</a>
+        <a href="https://azota.vn/de-thi/igzupa" target="_blank">hoá họt</a>
+        <a href="https://azota.vn/de-thi/ekvwn6" target="_blank">lịch sử</a>
+        <a href="https://azota.vn/de-thi/pcxzse" target="_blank">vật lí</a>
+        <a href="https://azota.vn/de-thi/sqwd4x" target="_blank">sinh họt</a>
     </div>
 
     <script>
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
+        function createFalling() {
+            const el = document.createElement('div');
+            el.className = 'falling-item';
             
-            // Các icon sẽ rơi (có thể thay đổi tùy thích)
-            const icons = ['💙', '☁️', '✨', '🌸', '⭐', '🎈'];
-            heart.innerText = icons[Math.floor(Math.random() * icons.length)];
+            // Icon lấp lánh và Hà mã rơi
+            const icons = ['🦛', '🦛', '💙', '✨', '⭐', '☁️', '💎', '🤍', '🌸'];
+            const randomIcon = icons[Math.floor(Math.random() * icons.length)];
             
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = Math.random() * 3 + 2 + "s"; // Thời gian rơi từ 2-5s
-            heart.style.opacity = Math.random();
-            heart.style.fontSize = Math.random() * 20 + 10 + "px";
+            el.innerText = randomIcon;
+
+            // Thiết lập hiệu ứng blink
+            el.classList.add('blink');
+
+            el.style.left = Math.random() * 100 + 'vw';
+            const duration = Math.random() * 3 + 4; 
+            el.style.animationDuration = duration + 's, 0.8s';
             
-            document.body.appendChild(heart);
-            
+            // Chỉnh kích thước (Hà mã to hơn icon)
+            const size = (randomIcon === '🦛') ? (Math.random() * 20 + 35) : (Math.random() * 15 + 15);
+            el.style.fontSize = size + 'px';
+
+            document.body.appendChild(el);
+
             setTimeout(() => {
-                heart.remove();
-            }, 5000);
+                el.remove();
+            }, duration * 1000);
         }
 
-        // Tạo icon liên tục
-        setInterval(createHeart, 300);
+        // Tạo rơi liên tục
+        setInterval(createFalling, 350);
     </script>
 </body>
 </html>
